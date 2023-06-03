@@ -4,7 +4,7 @@ longtitle:        LongTitle
 author:           Adina Tung & James Froelich
 email:            
 description: >
-  Build Jekyll site with the GitBook style.
+  CSE 455 Final Project
 
 version:          1.0
 gitbook_version:  3.2.3
