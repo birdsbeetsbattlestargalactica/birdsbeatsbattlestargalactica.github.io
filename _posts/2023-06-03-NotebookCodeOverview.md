@@ -4,6 +4,7 @@ author: Adina Tung, James Froelich
 date: 2023-06-03
 category: Jekyll
 layout: post
+cover: https://birdsbeetsbattlestargalactica.github.io/assets/birds.gif
 ---
 
 The following code was adapted from [Joseph Redmon's tutorial][1]. 
