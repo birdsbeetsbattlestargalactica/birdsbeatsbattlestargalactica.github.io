@@ -9,7 +9,7 @@ description: >
 version:          1.0
 gitbook_version:  3.2.3
 
-url:              ''
+url:    birdsbeatsbattlestargalactica.github.io
 domain: birdsbeatsbattlestargalactica.github.io       # if you want to force HTTPS, specify the domain without the http at the start, e.g. example.com
 rss:              RSS
 
