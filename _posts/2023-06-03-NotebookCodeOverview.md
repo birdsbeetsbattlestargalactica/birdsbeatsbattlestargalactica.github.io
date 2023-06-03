@@ -10,7 +10,7 @@ cover: https://birdsbeetsbattlestargalactica.github.io/assets/birds_better.gif
 The following code was adapted from [Joseph Redmon's tutorial][1]. 
 
 Libraries used:
-```
+```python
 import numpy as np
 import matplotlib.pyplot as plt
 import torch
@@ -25,20 +25,20 @@ from torchvision.models import resnet18, ResNet18_Weights
 ```
 
 We used custom datasets in Kaggle to import checkpoints from previous runs.
-```
+```python
 ### set up directories
 prev_cpts = '/kaggle/input/bbbg_cpts/'
 checkpoints = '/kaggle/working/
 ```
 
 Helper function for printing data to graphs
-```
+```python
 def smooth(x, size):
   return np.convolve(x, np.ones(size)/size, mode='valid')
 ```
 
 Base definition of our data loaders, see experimentation for changes made.
-```
+```python
 def get_bird_data(augmentation=0, input_size=128):
     transform_train = transforms.Compose([
         transforms.Resize(input_size),
@@ -68,7 +68,7 @@ def get_bird_data(augmentation=0, input_size=128):
 ```
 
 Training function
-```
+```python
 def train(net, dataloader, epochs=1, start_epoch=0, lr=0.01, momentum=0.9, decay=0.0005, 
           verbose=1, print_every=10, state=None, schedule={}, checkpoint_path=None):
     net.to(device)
@@ -128,7 +128,7 @@ def train(net, dataloader, epochs=1, start_epoch=0, lr=0.01, momentum=0.9, decay
 ```
 
 Main code.
-```
+```python
 device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 print(device)
 data = get_bird_data(input_size=256)
@@ -146,7 +146,7 @@ else:
 ```
 
 Prediction code.
-```
+```python
 def predict(net, dataloader, ofname):
     out = open(ofname, 'w')
     out.write("path,class\n")
