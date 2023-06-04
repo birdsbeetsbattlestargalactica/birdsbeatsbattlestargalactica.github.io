@@ -22,7 +22,8 @@ After many trials with resnet18, we noticed the loss plateaued at around 0.5 eve
 #### Plots:  
 
 ##### First Attempt with RESNET 34:
-###### epoch = 25, schedule = {0:.01, 8:.001, 15:0.0001}, horizontal flip (p) = 0.5, vertical flip (p) = 0, color jitter (p) = 0 normalize (mean, std) = (0, 0), invertion (p) = 0, final loss = 0.118  
+###### epoch = 25, schedule = {0:.01, 8:.001, 15:0.0001}, batch size = 64
+###### horizontal flip (p) = 0.5, vertical flip (p) = 0, color jitter (p) = 0 normalize (mean, std) = (0, 0), invertion (p) = 0, final loss = 0.118  
 
 ###### 20% prediction accuracy: 0.8325 
 
@@ -109,6 +110,17 @@ def train(net, dataloader, epochs=1, start_epoch=0, lr=0.01, momentum=0.90, deca
             plt.savefig('checkpoint-%d.png'%(epoch+1))
     return losses
 ```
+
+##### First Attempt with the scheduler on RESNET 34:
+###### epoch = 35, batch size = 256
+###### horizontal flip (p) = 0.5, vertical flip (p) = 0, color jitter (p) = 0 normalize (mean, std) = (0, 0), invertion (p) = 0, final loss = ~ 0.05  
+
+###### 20% prediction accuracy: 0.8135 
+
+![Resnet34 with 35 epochs, 0.5 vertical flip, scheduler](https://birdsbeetsbattlestargalactica.github.io/assets/graphs/res34_scheduler_35epochs)
+
+Slightly disappointing accuracy compared to previous runs considering that was the lowest final loss
+we had seen yet. Our guess is that the batch size was too high. 
 
 [1]: https://birdsbeetsbattlestargalactica.github.io/assets/graphs/resnet34_epoch25.png
 [2]: https://pytorch.org/docs/stable/generated/torch.optim.lr_scheduler.ReduceLROnPlateau.html
