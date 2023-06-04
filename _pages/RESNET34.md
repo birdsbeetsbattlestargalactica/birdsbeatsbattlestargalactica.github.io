@@ -13,7 +13,7 @@ After many trials with resnet18, we noticed the loss plateaued at around 0.5 eve
 
 |epoch|schedule|horizontal/vertical flip (p)|random color jitter (p)|normalize|invert (p)|final loss|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|25|{0:.01, 8:.001, 15:0.0001}|0.5/0.0|-|-|-|0.194| <!--- first resnet34 attempt --->
+|25|{0:.01, 8:.001, 15:0.0001}|0.5/0.0|-|-|-|0.118| <!--- first resnet34 attempt --->
 |25|{0:.01, 8:.001, 15:0.0001}|0.2/0.2|-|-|-|0.194| <!--- 2394.png v'lower probability...' --->
 |32|{0:.01, 12:.001, 19:0.0001}|0.2/0.2|-|-|-|still running|  <!--  v9 -->
 
@@ -60,7 +60,7 @@ we came across [`optim.lr_scheduler.ReduceLROnPlateau`][2] which allows the mode
 to adjust the learning rate when it detects a plateau in the loss.
 
 
-We added the following code to our train function.
+We adjusted our train function to use the new scheduler.
 ```python
 def train(net, dataloader, epochs=1, start_epoch=0, lr=0.01, momentum=0.90, decay=0.0005, 
           verbose=1, print_every=10, state=None, checkpoint_path=None):
@@ -117,7 +117,7 @@ def train(net, dataloader, epochs=1, start_epoch=0, lr=0.01, momentum=0.90, deca
 
 ###### 20% prediction accuracy: 0.8135 
 
-![Resnet34 with 35 epochs, 0.5 vertical flip, scheduler](https://birdsbeetsbattlestargalactica.github.io/assets/graphs/res34_scheduler_35epochs)
+![Resnet34 with 35 epochs, 0.5 vertical flip, scheduler](https://birdsbeetsbattlestargalactica.github.io/assets/graphs/res34_scheduler_35epochs.png)
 
 Slightly disappointing accuracy compared to previous runs considering that was the lowest final loss
 we had seen yet. Our guess is that the batch size was too high. 
