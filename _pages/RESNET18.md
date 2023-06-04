@@ -19,11 +19,11 @@ small amount, we could train the model to detect a bird despite imperfections
 in the image.  
 
 We tried the following:  
-    1. Randomly flipping images vertically (`transforms.RandomVerticalFlip()`)  
-    2. Randomly flipping images horizontally (`transforms.RandomHorizontalFlip()`)  
-    3. Randomly adjusting the brightness, contrast, saturation and hue  (`transforms.ColorJitter(0.2, 0.2, 0.2, 0.2)`)  
-    4. Normalizing the image (`transforms.Normalize((.5, .5, .5), (.5, .5, .5))`)  
-    5. Inverting the image (`transforms.RandomInvert(0.125)`)  
+    1. Randomly flipping images vertically (`transforms.RandomVerticalFlip()`), [doc][1]  
+    2. Randomly flipping images horizontally (`transforms.RandomHorizontalFlip()`), [doc][2]  
+    3. Randomly adjusting the brightness, contrast, saturation and hue  (`transforms.ColorJitter(0.2, 0.2, 0.2, 0.2)`), [doc][3]  
+    4. Normalizing the image (`transforms.Normalize((.5, .5, .5), (.5, .5, .5))`), [doc][4]  
+    5. Inverting the image (`transforms.RandomInvert(0.125)`), [doc][5]  
     
     
 For the following, batch = 128, momentum = 0.9, decay = 0.0005  
@@ -62,5 +62,9 @@ For the following, batch = 128, momentum = 0.9, decay = 0.0005
 
 ![Resnet18 with 12 epochs, horizontal and vertical flip](https://birdsbeetsbattlestargalactica.github.io/assets/graphs/6322.png)
 
-
+[1]: https://pytorch.org/vision/main/generated/torchvision.transforms.ColorJitter.html
+[2]: https://pytorch.org/vision/main/generated/torchvision.transforms.RandomVerticalFlip.html#torchvision.transforms.RandomVerticalFlip
+[3]: https://pytorch.org/vision/main/generated/torchvision.transforms.RandomHorizontalFlip.html#torchvision.transforms.RandomHorizontalFlip
+[4]: https://pytorch.org/vision/main/generated/torchvision.transforms.Normalize.html
+[5]: https://pytorch.org/vision/main/generated/torchvision.transforms.RandomInvert.html#torchvision.transforms.RandomInvert
 

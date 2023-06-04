@@ -37,3 +37,4 @@ transform_train = transforms.Compose([
 
 
 [1]: https://birdsbeetsbattlestargalactica.github.io/assets/graphs/resnet34_epoch25.png
+[2]: https://pytorch.org/docs/stable/generated/torch.optim.lr_scheduler.ReduceLROnPlateau.html

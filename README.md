@@ -1,6 +1,7 @@
 ---
 layout: home
 title: Birds, Beets, Battlestar Galactica
+cover: https://birdsbeetsbattlestargalactica.github.io/assets/birds_better.gif
 permalink: /
 ---
 
@@ -21,7 +22,10 @@ gitbook serves as documentation for our participation in the Spring 2023 CSE
   our complete code [here][2]. The changes we made will be highlighted in
   the experiment pages.  
 
-This summary should mention the problem setup, data used, techniques, etc. It should include a description of which components were from preexisting work (i.e. code from github) and which components were implemented for the project (i.e. new code, gathered dataset, etc).
+<!-- This summary should mention the problem setup, data used, techniques, etc. 
+It should include a description of which components were from preexisting work (
+  i.e. code from github) and which components were implemented for the project 
+  (i.e. new code, gathered dataset, etc). -->
 
 
 # Summary
