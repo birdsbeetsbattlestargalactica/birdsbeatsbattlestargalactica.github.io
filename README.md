@@ -34,6 +34,14 @@ gitbook serves as documentation for our participation in the Spring 2023 CSE
   our complete code [here][2]. The changes we made will be highlighted in
   the experiment pages.  
 
+### Techniques
+  We trained two versions of RESNET as our model. RESNET
+  comes pre-trained on IMAGENET but we fine tuned the model for
+  classifying birds. Our process consisted of essentially of trial
+  and error, tweaking the hyperparameters and image transforms on the
+  training set. Once we stopped seeing an improvement in RESNET18,
+  we switched to RESNET34.
+
 <!-- This summary should mention the problem setup, data used, techniques, etc. 
 It should include a description of which components were from preexisting work (
   i.e. code from github) and which components were implemented for the project 

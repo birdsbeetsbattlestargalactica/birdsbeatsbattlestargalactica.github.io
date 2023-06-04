@@ -113,7 +113,7 @@ def train(net, dataloader, epochs=1, start_epoch=0, lr=0.01, momentum=0.90, deca
 
 ##### First Attempt with the scheduler on RESNET 34:
 ###### epoch = 35, batch size = 256
-###### horizontal flip (p) = 0.5, vertical flip (p) = 0, color jitter (p) = 0 normalize (mean, std) = (0, 0), invertion (p) = 0, final loss = ~ 0.05  
+###### horizontal flip (p) = 0.5, vertical flip (p) = 0, color jitter (p) = 0 normalize (mean, std) = (0, 0), invertion (p) = 0, final loss = 0.056  
 
 ###### 20% prediction accuracy: 0.8135 
 
