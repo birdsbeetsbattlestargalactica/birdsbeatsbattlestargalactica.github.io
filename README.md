@@ -9,6 +9,9 @@ Welcome to the project site for Adina & James' bird classifier submission. This
 gitbook serves as documentation for our participation in the Spring 2023 CSE 
 455 bird classification competition hosted on [Kaggle][1].
 
+### Summary
+  [video here]
+
 ### Dataset
   We were provided a training dataset consisting of 30 thousand bird images 
   divided into 535 separate classes. We were provided names for each class and 
@@ -28,8 +31,7 @@ It should include a description of which components were from preexisting work (
   (i.e. new code, gathered dataset, etc). -->
 
 
-# Summary
-  [video here]
+
 
 [1]: https://kaggle.com/competitions/birds23sp
 [2]: https://birdsbeetsbattlestargalactica.github.io/jekyll/2023-06-03-NotebookCodeOverview.html

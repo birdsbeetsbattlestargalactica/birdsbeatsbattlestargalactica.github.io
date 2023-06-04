@@ -20,6 +20,13 @@ After many trials with resnet18, we noticed the loss plateaued at around 0.5 eve
 
 #### Plots:  
 
+##### First Attempt with RESNET 34:
+###### epoch = 25, schedule = {0:.01, 8:.001, 15:0.0001}, horizontal flip (p) = 0.5, vertical flip (p) = 0, color jitter (p) = 0 normalize (mean, std) = (0, 0), invertion (p) = 0, final loss = 0.118  
+
+![Resnet34 with 25 epochs, 0.5 vertical flip](https://birdsbeetsbattlestargalactica.github.io/assets/graphs/first_resnet34_25epochs.png)
+
+![Resnet34 with 25 epochs, 0.5 vertical flip result](https://birdsbeetsbattlestargalactica.github.io/assets/results/res34_first.png)
+
 ###### epoch = 25, schedule = {0:.01, 8:.001, 15:0.0001}, horizontal flip (p) = 0.2, vertical flip (p) = 0.2, color jitter (p) = 0 normalize (mean, std) = (0, 0), invertion (p) = 0, final loss = 0.194  
 
 ![Resnet34 with 25 epochs, 0.2 horizontal and vertical flip](https://birdsbeetsbattlestargalactica.github.io/assets/graphs/2394.png)
