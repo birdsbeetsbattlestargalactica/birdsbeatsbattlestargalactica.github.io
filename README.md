@@ -11,6 +11,7 @@ gitbook serves as documentation for our participation in the Spring 2023 CSE
 
 ### Summary
   [video here]
+  !['birdsbeatsbattlestar'](https://www.youtube.com/watch?v=WaaANll8h18)
 
 ### Dataset
   We were provided a training dataset consisting of 30 thousand bird images 
