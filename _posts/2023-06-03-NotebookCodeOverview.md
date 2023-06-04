@@ -123,7 +123,7 @@ def train(net, dataloader, epochs=1, start_epoch=0, lr=0.01, momentum=0.9, decay
     return losses
 ```
 
-### Smooth loss data:  
+### Smooth loss data  
 Helper function for smoothing loss data (for generating graphs)  
 ```python
 def smooth(x, size):
@@ -185,7 +185,6 @@ def calc_accuracy(file_path):
     df = pandas.read_csv(file_path, header=0)
     df.columns = df.columns.str.removeprefix("text/")
     predictions = [tuple(x) for x in df.itertuples(index=False)]
-#     print(predictions)
     
     df = pandas.read_csv(birds_folder + 'labels.csv', header=0)
     actuals = df.set_index('path')['class'].to_dict()
