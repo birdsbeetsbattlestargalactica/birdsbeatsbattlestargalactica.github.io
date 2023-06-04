@@ -12,7 +12,10 @@ gitbook serves as documentation for our participation in the Spring 2023 CSE
 ### Summary
   [video here]
 
-  https://www.youtube.com/watch?v=WaaANll8h18
+  <iframe width="420" height="315"
+    src="https://www.youtube.com/watch?v=WaaANll8h18">
+  </iframe>
+  
 
 
 ### Dataset
