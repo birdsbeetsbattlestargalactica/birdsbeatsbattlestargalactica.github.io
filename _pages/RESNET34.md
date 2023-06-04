@@ -24,18 +24,22 @@ After many trials with resnet18, we noticed the loss plateaued at around 0.5 eve
 ##### First Attempt with RESNET 34:
 ###### epoch = 25, schedule = {0:.01, 8:.001, 15:0.0001}, horizontal flip (p) = 0.5, vertical flip (p) = 0, color jitter (p) = 0 normalize (mean, std) = (0, 0), invertion (p) = 0, final loss = 0.118  
 
+###### 20% prediction accuracy: 0.8325 
+
 ![Resnet34 with 25 epochs, 0.5 vertical flip](https://birdsbeetsbattlestargalactica.github.io/assets/graphs/first_resnet34_25epochs.png)
 
-###### 20% prediction accuracy: 0.8325 
+
 
 It should be mentioned we tried other values for momentum (0.95 and 0.99) and 
 weight decay (0.0001 and 0.001) but saw no major improvements
 
 ###### epoch = 25, schedule = {0:.01, 8:.001, 15:0.0001}, horizontal flip (p) = 0.2, vertical flip (p) = 0.2, color jitter (p) = 0 normalize (mean, std) = (0, 0), invertion (p) = 0, final loss = 0.194  
 
+###### 20% prediction accuracy: 0.834 
+
 ![Resnet34 with 25 epochs, 0.2 horizontal and vertical flip](https://birdsbeetsbattlestargalactica.github.io/assets/graphs/2394.png)
 
-###### 20% prediction accuracy: 0.834 
+
 
 ```python
 transform_train = transforms.Compose([
@@ -72,13 +76,6 @@ def train(net, dataloader, epochs=1, start_epoch=0, lr=0.01, momentum=0.90, deca
         optimizer.load_state_dict(state['optimizer'])
         start_epoch = state['epoch']
         losses = state['losses']
-
-    # Fast forward lr schedule through already trained epochs
-    for epoch in range(start_epoch):
-        if epoch in schedule:
-            print ("Learning rate: %f"% schedule[epoch])
-            for g in optimizer.param_groups:
-                g['lr'] = schedule[epoch]
 
     for epoch in range(start_epoch, epochs):
         sum_loss = 0.0
