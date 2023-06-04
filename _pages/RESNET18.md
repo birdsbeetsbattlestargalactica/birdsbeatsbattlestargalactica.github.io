@@ -30,13 +30,13 @@ For the following, batch = 128, momentum = 0.9, decay = 0.0005
 
 <div class="table-wrapper" markdown="block">
 
-|epoch|schedule|horizontal/vertical flip (p)|random color jitter (p)|normalize|invert (p)|final loss|
-|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|5|{0:.01, 4:0.001}|0.5/0.5|0.2|0.5|-|1.364| <!-- /assets/resnet18_ep5_hv-flip.png  v15 --> 
-|5|{0:.03, 1:0.01, 4:0.001}|0.5/0.5|0.2|-|-|1.160| <!--/assets/resnet18_ep5_hv-flip_jitter.png v13-->
-|8|{0:.01, 4:.001}|0.5/0.5|0.5|-|-|1.516| <!-- /assets/3427.png v'restart, no more invert'-->
-|10|{0:.01, 8:.001}|0.5/-|-|-|-|0.528| <!-- /assets/7313.png  v8-->
-|12|{0:.01, 6:.001}|0.5/0.5|0.5|-|0.125|1.270|  <!-- /assets/6322.png v'training 8 to 12'-->
+|epoch|schedule|horizontal/vertical flip (p)|random color jitter (p)|normalize|invert (p)|final loss| 20% Accuracy |
+|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:| 
+|5|{0:.01, 4:0.001}|0.5/0.5|0.2|0.5|-|1.364| | <!-- /assets/resnet18_ep5_hv-flip.png  v15 -->   
+|5|{0:.03, 1:0.01, 4:0.001}|0.5/0.5|0.2|-|-|1.160| <!--/assets/resnet18_ep5_hv-flip_jitter.png v13-->  
+|8|{0:.01, 4:.001}|0.5/0.5|0.5|-|-|1.516| <!-- /assets/3427.png v'restart, no more invert'-->  
+|10|{0:.01, 8:.001}|0.5/-|-|-|-|0.528| <!-- /assets/7313.png  v8-->  
+|12|{0:.01, 6:.001}|0.5/0.5|0.5|-|0.125|1.270|  <!-- /assets/6322.png v'training 8 to 12'-->  
 
 </div>
 

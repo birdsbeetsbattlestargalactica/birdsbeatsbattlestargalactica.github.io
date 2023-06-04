@@ -11,11 +11,11 @@ After many trials with resnet18, we noticed the loss plateaued at around 0.5 eve
 
 <div class="table-wrapper" markdown="block">
 
-|epoch|schedule|horizontal/vertical flip (p)|random color jitter (p)|normalize|invert (p)|final loss|
-|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|25|{0:.01, 8:.001, 15:0.0001}|0.5/0.0|-|-|-|0.118| <!--- first resnet34 attempt --->
-|25|{0:.01, 8:.001, 15:0.0001}|0.2/0.2|-|-|-|0.194| <!--- 2394.png v'lower probability...' --->
-|32|{0:.01, 12:.001, 19:0.0001}|0.2/0.2|-|-|-|still running|  <!--  v9 -->
+|epoch|batch size|schedule|horizontal/vertical flip (p)|random color jitter (p)|normalize|invert (p)|final loss|20% Accuracy|
+|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+|25|64|{0:.01, 8:.001, 15:0.0001}|0.5/0.0|-|-|-|0.118|0.8325| <!--- first resnet34 attempt --->
+|25|64|{0:.01, 8:.001, 15:0.0001}|0.2/0.2|-|-|-|0.194|0.834| <!--- 2394.png v'lower probability...' --->
+|32|64|{0:.01, 12:.001, 19:0.0001}|0.2/0.2|-|-|-|0.132|0.8315| <!--  v9 -->
 
 </div>
 
