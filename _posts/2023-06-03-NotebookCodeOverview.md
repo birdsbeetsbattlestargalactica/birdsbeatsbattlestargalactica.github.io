@@ -21,23 +21,21 @@ import torch.nn.functional as F
 import torch.optim as optim
 import os
 import itertools
+import pandas
+
+from pandas import DataFrame
 from torchvision.models import resnet18, ResNet18_Weights
 ```
 
-We used custom datasets in Kaggle to import checkpoints from previous runs.
+We used custom datasets in Kaggle to import checkpoints from previous runs.  
 ```python
 ### set up directories
 prev_cpts = '/kaggle/input/bbbg_cpts/'
 checkpoints = '/kaggle/working/
 ```
 
-Helper function for printing data to graphs
-```python
-def smooth(x, size):
-  return np.convolve(x, np.ones(size)/size, mode='valid')
-```
-
-Base definition of our data loaders, see experimentation for changes made.
+### Load source images for training and testing  
+Base definition of our data loaders, see experimentation for changes made.  
 ```python
 def get_bird_data(augmentation=0, input_size=128):
     transform_train = transforms.Compose([
@@ -67,7 +65,7 @@ def get_bird_data(augmentation=0, input_size=128):
     return {'train': trainloader, 'test': testloader, 'to_class': idx_to_class, 'to_name':idx_to_name}
 ```
 
-Training function
+### Training function  
 ```python
 def train(net, dataloader, epochs=1, start_epoch=0, lr=0.01, momentum=0.9, decay=0.0005, 
           verbose=1, print_every=10, state=None, schedule={}, checkpoint_path=None):
@@ -76,8 +74,6 @@ def train(net, dataloader, epochs=1, start_epoch=0, lr=0.01, momentum=0.9, decay
     losses = []
     criterion = nn.CrossEntropyLoss()
     optimizer = optim.SGD(net.parameters(), lr=lr, momentum=momentum, weight_decay=decay)
-    #optimizer = optim.RMSprop(net.parameters(), lr=lr, momentum=momentum, weight_decay=decay)
-    #adam
 
     # Load previous training state
     if state:
@@ -127,7 +123,15 @@ def train(net, dataloader, epochs=1, start_epoch=0, lr=0.01, momentum=0.9, decay
     return losses
 ```
 
-Main code.
+### Smooth loss data:  
+Helper function for smoothing loss data (for generating graphs)  
+```python
+def smooth(x, size):
+  return np.convolve(x, np.ones(size)/size, mode='valid')
+```
+
+### Main code  
+Train datasets from scratch or starting with previously saved checkpoints.  
 ```python
 device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 print(device)
@@ -145,7 +149,8 @@ else:
 
 ```
 
-Prediction code.
+### Prediction code  
+Generates a `.csv` file of our model's predictions on the test dataset.
 ```python
 def predict(net, dataloader, ofname):
     out = open(ofname, 'w')
@@ -166,10 +171,36 @@ def predict(net, dataloader, ofname):
     out.close()
 
 
-if (1):
-    state = torch.load(checkpoints + 'checkpoint-20.pkl')
-    resnet.load_state_dict(state['net'])
-    predict(resnet, data['test'], checkpoints + "preds.csv")
+state = torch.load(checkpoints + 'checkpoint-20.pkl')
+resnet.load_state_dict(state['net'])
+predict(resnet, data['test'], checkpoints + "preds.csv")
+```
+
+### Calculate accuracy  
+Compares the labelling from our model to the actual labels.
+```python
+birds_folder = '/kaggle/input/birds23sp/birds/'
+
+def calc_accuracy(file_path):
+    df = pandas.read_csv(file_path, header=0)
+    df.columns = df.columns.str.removeprefix("text/")
+    predictions = [tuple(x) for x in df.itertuples(index=False)]
+#     print(predictions)
+    
+    df = pandas.read_csv(birds_folder + 'labels.csv', header=0)
+    actuals = df.set_index('path')['class'].to_dict()
+    
+    total = 0
+    correct = 0
+    for i in predictions:
+        if (int(actuals.get(i[0], -1)) == i[1]):
+            correct += 1
+        total += 1
+    return correct / total
+    
+    
+acc = calc_accuracy('preds-train2.csv')
+print("accuracy = {}".format(acc))
 ```
 
 [1]: https://colab.research.google.com/drive/1kHo8VT-onDxbtS3FM77VImG35h_K_Lav?usp=sharing
