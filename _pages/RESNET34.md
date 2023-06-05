@@ -9,6 +9,8 @@ cover: https://birdsbeetsbattlestargalactica.github.io/assets/birds_better.gif
 
 After many trials with resnet18, we noticed the loss plateaued at around 0.5 even with increased number of epochs, so we went ahead and experimented with resnet34. We saw better results from the training with more layers and more epochs in the training model. Additionally, more image augmentation seemed to be correlated to higher loss based on our model with resnet18, which lead us to limit the numbers of augmentation used and also tune down the probability of their occurrence.
 
+For the following, momentum = 0.9, decay = 0.0005 
+
 <div class="table-wrapper" markdown="block">
 
 |epoch|batch size|schedule|horizontal/vertical flip (p)|random color jitter (p)|normalize|invert (p)|final loss|20% Accuracy|
@@ -120,9 +122,13 @@ def train(net, dataloader, epochs=1, start_epoch=0, lr=0.01, momentum=0.90, deca
 ![Resnet34 with 35 epochs, 0.5 vertical flip, scheduler](https://birdsbeetsbattlestargalactica.github.io/assets/graphs/res34_scheduler_35epochs.png)
 
 Slightly disappointing accuracy compared to previous runs considering that was the lowest final loss
-we had seen yet. Our guess is that the batch size was too high. 
+we had seen yet. Our guess is that the batch size was too high or we ended up getting overfit past
+in the later epochs where it plateaus. We found an [article][5] on early stopping to avoid overfit.
+We tested this hypothesis by submitting a prediction using the state saved for epoch 17. This had an
+accuracy of 0.813, not a great enough difference to support our hypothesis.  
 
 [1]: https://birdsbeetsbattlestargalactica.github.io/assets/graphs/resnet34_epoch25.png
 [2]: https://pytorch.org/docs/stable/generated/torch.optim.lr_scheduler.ReduceLROnPlateau.html
 [3]: https://github.com/christianversloot/machine-learning-articles/blob/main/getting-out-of-loss-plateaus-by-adjusting-learning-rates.md
 [4]: https://towardsdatascience.com/a-visual-explanation-of-gradient-descent-methods-momentum-adagrad-rmsprop-adam-f898b102325c
+[5]: https://towardsdatascience.com/the-million-dollar-question-when-to-stop-training-deep-learning-models-fa9b488ac04d

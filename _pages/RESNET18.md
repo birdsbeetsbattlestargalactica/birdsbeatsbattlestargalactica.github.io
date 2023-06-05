@@ -26,17 +26,17 @@ We tried the following:
     5. Inverting the image (`transforms.RandomInvert(0.125)`), [doc][5]  
     
     
-For the following, batch = 128, momentum = 0.9, decay = 0.0005  
+For the following, momentum = 0.9, decay = 0.0005  
 
 <div class="table-wrapper" markdown="block">
 
-|epoch|schedule|horizontal/vertical flip (p)|random color jitter (p)|normalize|invert (p)|final loss| 20% Accuracy |
-|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:| 
-|5|{0:.01, 4:0.001}|0.5/0.5|0.2|0.5|-|1.364| | <!-- /assets/resnet18_ep5_hv-flip.png  v15 -->   
-|5|{0:.03, 1:0.01, 4:0.001}|0.5/0.5|0.2|-|-|1.160| <!--/assets/resnet18_ep5_hv-flip_jitter.png v13-->  
-|8|{0:.01, 4:.001}|0.5/0.5|0.5|-|-|1.516| <!-- /assets/3427.png v'restart, no more invert'-->  
-|10|{0:.01, 8:.001}|0.5/-|-|-|-|0.528| <!-- /assets/7313.png  v8-->  
-|12|{0:.01, 6:.001}|0.5/0.5|0.5|-|0.125|1.270|  <!-- /assets/6322.png v'training 8 to 12'-->  
+|epoch|batch size|schedule|horizontal/vertical flip (p)|random color jitter (p)|normalize|invert (p)|final loss|
+|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:| 
+|5|64|{0:.01, 4:0.001}|0.5/0.5|0.2|0.5|-|1.364| <!-- /assets/resnet18_ep5_hv-flip.png  v15 -->   
+|5|64|{0:.03, 1:0.01, 4:0.001}|0.5/0.5|0.2|-|-|1.160| <!--/assets/resnet18_ep5_hv-flip_jitter.png v13-->  
+|8|64|{0:.01, 4:.001}|0.5/0.5|0.5|-|-|1.516| <!-- /assets/3427.png v'restart, no more invert'-->  
+|10|64|{0:.01, 8:.001}|0.5/-|-|-|-|0.528| <!-- /assets/7313.png  v8-->  
+|12|64|{0:.01, 6:.001}|0.5/0.5|0.5|-|0.125|1.270|  <!-- /assets/6322.png v'training 8 to 12'-->  
 
 </div>
 
@@ -61,6 +61,9 @@ For the following, batch = 128, momentum = 0.9, decay = 0.0005
 ###### epoch = 12, schedule = {0:.01, 6:.001}, horizontal flip (p) = 0.5, vertical flip (p) = 0.5, color jitter (p) = 0.5 normalize (mean, std) = (0, 0), invertion (p) = 0.125, final loss = 1.270  
 
 ![Resnet18 with 12 epochs, horizontal and vertical flip](https://birdsbeetsbattlestargalactica.github.io/assets/graphs/6322.png)
+
+Out of all trials above, the best prediction on the 20% test set never exceeded 79% accuracy. Our assumption was that since these didn't get stuck on a plateau, the results just showed the limitation with resnet18 that we need additional feature extraction layers to perform better predictions. This gave us the idea to train with resnet34.
+
 
 [1]: https://pytorch.org/vision/main/generated/torchvision.transforms.ColorJitter.html
 [2]: https://pytorch.org/vision/main/generated/torchvision.transforms.RandomVerticalFlip.html#torchvision.transforms.RandomVerticalFlip
