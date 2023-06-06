@@ -11,10 +11,8 @@ gitbook serves as documentation for our participation in the Spring 2023 CSE
 
 ### Summary
   <!-- [video here] -->
-
-  <iframe width="420" height="315"
-    src="/assets/summary.mp4" type="video/mp4">
-  </iframe>
+  
+<iframe width="917" height="573" src="https://www.youtube.com/embed/ppAH3w3q7JU" title="CSE 455 Final: Summary" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
   
   
