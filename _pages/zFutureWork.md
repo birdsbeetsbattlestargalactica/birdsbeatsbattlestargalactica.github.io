@@ -14,3 +14,7 @@ Given the time and hardware constraint, we didn't get to try out other ideas tha
 - Try RESNET50 or maybe even RESNET101 (on colab pro).
 - Try VGG16 model.
 - Hire a team of 50+ professional birdwatchers to classify the birds for us.
+
+  <iframe width="917" height="516" 
+    src="https://www.youtube.com/embed/WaaANll8h18" title="The Office US - Jim vs Dwight - Jim Impersonates Dwight" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen>
+  </iframe>

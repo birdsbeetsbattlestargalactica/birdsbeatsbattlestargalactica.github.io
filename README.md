@@ -12,12 +12,11 @@ gitbook serves as documentation for our participation in the Spring 2023 CSE
 ### Summary
   <!-- [video here] -->
 
-  <!-- <iframe width="420" height="315"
-    src="https://www.youtube.com/watch?v=WaaANll8h18">
-  </iframe> -->
-  <!-- <iframe width="917" height="516" 
-    src="https://www.youtube.com/embed/WaaANll8h18" title="The Office US - Jim vs Dwight - Jim Impersonates Dwight" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen>
-  </iframe> -->
+  <iframe width="420" height="315"
+    src="/assets/summary.mp4" type="video/mp4">
+  </iframe>
+
+  
   
 ### Problem
   Train a model that can classify 555 types of birds with high accuracy, given a relatively small train set.
