@@ -13,3 +13,4 @@ Given the time and hardware constraint, we didn't get to try out other ideas tha
 - Try averaging the weights of two models, one trained on the base train set and one trained on a very augmented data set. 
 - Try RESNET50 or maybe even RESNET101 (on colab pro).
 - Try VGG16 model.
+- Hire a team of 50+ professional birdwatchers to classify the birds for us.
