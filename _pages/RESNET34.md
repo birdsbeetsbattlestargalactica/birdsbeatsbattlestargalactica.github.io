@@ -56,7 +56,7 @@ transform_train = transforms.Compose([
 
 # Reduce LR On Plateau:
 
-It was it this point, we decided to get smarter about scheduling our learning 
+It was at this point, we decided to get smarter about scheduling our learning 
 rate. After reading a few articles on getting out of plateaus like [this one on Cyclical Learning Rates][3], 
 we came across [`optim.lr_scheduler.ReduceLROnPlateau`][2] which allows the model 
 to adjust the learning rate when it detects a plateau in the loss.
