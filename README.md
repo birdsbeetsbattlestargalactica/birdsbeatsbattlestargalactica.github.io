@@ -10,20 +10,21 @@ gitbook serves as documentation for our participation in the Spring 2023 CSE
 455 bird classification competition hosted on [Kaggle][1].
 
 ### Summary
-  [video here]
+  <!-- [video here] -->
 
   <!-- <iframe width="420" height="315"
     src="https://www.youtube.com/watch?v=WaaANll8h18">
   </iframe> -->
-  <iframe width="917" height="516" 
+  <!-- <iframe width="917" height="516" 
     src="https://www.youtube.com/embed/WaaANll8h18" title="The Office US - Jim vs Dwight - Jim Impersonates Dwight" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen>
-  </iframe>
+  </iframe> -->
   
-
+### Problem
+  Train a model that can classify 555 types of birds with high accuracy, given a relatively small train set.
 
 ### Dataset
   We were provided a training dataset consisting of 30 thousand bird images 
-  divided into 535 separate classes. We were provided names for each class and 
+  divided into 555 separate classes. We were provided names for each class and 
   a .csv file mapping the training images to their classes.
 
   We were also provided a test dataset consisting of 10 thousand images. We 
