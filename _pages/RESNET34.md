@@ -7,7 +7,7 @@ layout: post
 cover: https://birdsbeetsbattlestargalactica.github.io/assets/birds_better.gif
 ---
 
-After many trials with resnet18, we noticed the loss plateaued at around 0.5 even with increased number of epochs, so we went ahead and experimented with resnet34. We saw better results from the training with more layers and more epochs in the training model. Additionally, more image augmentation seemed to be correlated to higher loss based on our model with resnet18, which lead us to limit the numbers of augmentation used and also tune down the probability of their occurrence.
+After many trials with resnet18 and minimal image augmentation, we noticed the loss plateaued at around 0.5 even with increased number of epochs, so we went ahead and experimented with resnet34. We saw better results from the training with more layers and more epochs in the training model. Additionally, based on our learning from resnet18 that more image augmentation seemed to be correlated to higher loss, we limited the numbers of augmentation used and also tuned down the probability of their occurrence.
 
 For the following, momentum = 0.9, decay = 0.0005 
 
@@ -121,7 +121,7 @@ def train(net, dataloader, epochs=1, start_epoch=0, lr=0.01, momentum=0.90, deca
 
 ![Resnet34 with 35 epochs, 0.5 vertical flip, scheduler](https://birdsbeetsbattlestargalactica.github.io/assets/graphs/res34_scheduler_35epochs.png)
 
-Slightly disappointing accuracy compared to previous runs considering that was the lowest final loss
+This was a slightly disappointing accuracy compared to previous runs considering that was the lowest final loss
 we had seen yet. Our guess is that the batch size was too high or we ended up getting overfit past
 in the later epochs where it plateaus. We found an [article][5] on early stopping to avoid overfit.
 We tested this hypothesis by submitting a prediction using the state saved for epoch 17. This had an

@@ -8,15 +8,7 @@ cover: https://birdsbeetsbattlestargalactica.github.io/assets/birds_better.gif
 ---
 
 
-
-We started our initial attempts with RESNET18 mostly copying the example set in
-the tutorial. With the hyperparameters set the same as the tutorial 
-(momentum = 0.9, decay = 0.0005) and a batch size of 128, we were seeing 
-plateauing at a loss of about 0.5. In an effort to reduce loss and/or possibly 
-prevent overfitting, we added more image augmentation. Our though process was 
-that if we add another vertical/horizontal flip or adjust the brightness or saturation a 
-small amount, we could train the model to detect a bird despite imperfections
-in the image.  
+We started our initial attempts with RESNET18 mostly copying the example set in the tutorial. We went off the assumption that since the prediction from the tutorial was already doing pretty well to begin with, our only job would be fine-turning the set of parameters to find the sweet spot. With the hyperparameters set the same as the tutorial (momentum = 0.9, decay = 0.0005) and a batch size of 128, we were seeing plateauing at a loss of about 0.5. In an effort to reduce loss and/or possibly prevent overfitting, we added more image augmentation. Our thought process was that if we add another vertical/horizontal flip or adjust the brightness or saturation slightly, we could train the model to detect a bird despite imperfections in the image.  
 
 We tried the following:  
     1. Randomly flipping images vertically (`transforms.RandomVerticalFlip()`), [doc][1]  
@@ -62,7 +54,7 @@ For the following, momentum = 0.9, decay = 0.0005
 
 ![Resnet18 with 12 epochs, horizontal and vertical flip](https://birdsbeetsbattlestargalactica.github.io/assets/graphs/6322.png)
 
-Out of all trials above, the best prediction on the 20% test set never exceeded 79% accuracy. Our assumption was that since these didn't get stuck on a plateau, the results just showed the limitation with resnet18 that we need additional feature extraction layers to perform better predictions. This gave us the idea to train with resnet34.
+Out of all trials above, the best prediction on the 20% test set never exceeded 79% accuracy. We concluded that since these didn't get stuck on a plateau, the results indicated the dataset was perhaps too complicated for resnet18. We needed additional layers to do feature extraction on a more generalized trainset. This gave us the idea to train with resnet34.
 
 
 [1]: https://pytorch.org/vision/main/generated/torchvision.transforms.ColorJitter.html
