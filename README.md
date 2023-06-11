@@ -49,4 +49,4 @@ It should include a description of which components were from preexisting work (
 
 
 [1]: https://kaggle.com/competitions/birds23sp
-[2]: https://birdsbeetsbattlestargalactica.github.io/jekyll/2023-06-03-NotebookCodeOverview.html
+[2]: https://birdsbeetsbattlestargalactica.github.io/pages/NotebookCodeOverview
