@@ -7,7 +7,21 @@ layout: post
 cover: https://birdsbeetsbattlestargalactica.github.io/assets/birds_better.gif
 ---
 
-The following code was adapted from [Joseph Redmon's tutorial][1]. 
+The following code was adapted from [Joseph Redmon's tutorial][1].
+
+A few of our many notebooks:
+
+<a href="https://birdsbeetsbattlestargalactica.github.io/assets/notebooks/birds-beets-battlestar-galactica.ipynb" download>
+
+<a href="https://birdsbeetsbattlestargalactica.github.io/assets/notebooks/birds-with-resnet34.ipynb" download>
+
+<a href="https://birdsbeetsbattlestargalactica.github.io/assets/notebooks/the-birds-are-learning.ipynb" download>
+
+<a href="https://birdsbeetsbattlestargalactica.github.io/assets/notebooks/the-birds-are-learning-small-batch.ipynb" download>
+
+<a href="https://birdsbeetsbattlestargalactica.github.io/assets/notebooks/the-birds-are-learning-composite-data.ipynb" download>
+
+#### base starter code
 
 Libraries used:
 ```python
