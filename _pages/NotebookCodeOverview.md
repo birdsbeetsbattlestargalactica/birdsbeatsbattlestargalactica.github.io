@@ -11,15 +11,15 @@ The following code was adapted from [Joseph Redmon's tutorial][1].
 
 A few of our many notebooks:
 
-<a href="https://birdsbeetsbattlestargalactica.github.io/assets/notebooks/birds-beets-battlestar-galactica.ipynb" download>
+<a href="https://birdsbeetsbattlestargalactica.github.io/assets/notebooks/birds-beets-battlestar-galactica.ipynb" download>RESNET18 with simple data augmentation</a>
 
-<a href="https://birdsbeetsbattlestargalactica.github.io/assets/notebooks/birds-with-resnet34.ipynb" download>
+<a href="https://birdsbeetsbattlestargalactica.github.io/assets/notebooks/birds-with-resnet34.ipynb" download>RESNET34 with simple data augmentation</a>
 
-<a href="https://birdsbeetsbattlestargalactica.github.io/assets/notebooks/the-birds-are-learning.ipynb" download>
+<a href="https://birdsbeetsbattlestargalactica.github.io/assets/notebooks/the-birds-are-learning.ipynb" download>RESNET34 with a plateau based LR scheduler</a>
 
-<a href="https://birdsbeetsbattlestargalactica.github.io/assets/notebooks/the-birds-are-learning-small-batch.ipynb" download>
+<a href="https://birdsbeetsbattlestargalactica.github.io/assets/notebooks/the-birds-are-learning-small-batch.ipynb" download>RESNET34 with a plateau based LR scheduler, smaller batch</a>
 
-<a href="https://birdsbeetsbattlestargalactica.github.io/assets/notebooks/the-birds-are-learning-composite-data.ipynb" download>
+<a href="https://birdsbeetsbattlestargalactica.github.io/assets/notebooks/the-birds-are-learning-composite-data.ipynb" download>RESNET34 with a plateau based LR scheduler, composite data set</a>
 
 #### base starter code
 
