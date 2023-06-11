@@ -19,7 +19,7 @@ A few of our many notebooks:
 
 <a href="https://birdsbeetsbattlestargalactica.github.io/assets/notebooks/the-birds-are-learning-small-batch.ipynb" download>RESNET34 with a plateau based LR scheduler, smaller batch</a>
 
-<a href="https://birdsbeetsbattlestargalactica.github.io/assets/notebooks/the-birds-are-learning-composite-data.ipynb" download>RESNET34 with a plateau based LR scheduler, composite data set</a>
+<a href="https://birdsbeetsbattlestargalactica.github.io/assets/notebooks/the-birds-are-learning-composite-data.ipynb" download>RESNET34 with a plateau based LR scheduler, pre-trained on original data set, trained again on composite data set</a>
 
 #### base starter code
 
