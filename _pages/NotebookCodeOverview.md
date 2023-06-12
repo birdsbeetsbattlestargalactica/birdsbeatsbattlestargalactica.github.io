@@ -15,6 +15,8 @@ A few of our many notebooks:
 
 <a href="https://birdsbeetsbattlestargalactica.github.io/assets/notebooks/birds-with-resnet34.ipynb" download>RESNET34 with simple data augmentation</a>
 
+<a href="https://birdsbeetsbattlestargalactica.github.io/assets/notebooks/bir-directional-flips-with-resnet34.ipynb" download>RESNET34 with simple, bi-directional data augmentation</a>
+
 <a href="https://birdsbeetsbattlestargalactica.github.io/assets/notebooks/the-birds-are-learning.ipynb" download>RESNET34 with a plateau based LR scheduler</a>
 
 <a href="https://birdsbeetsbattlestargalactica.github.io/assets/notebooks/the-birds-are-learning-small-batch.ipynb" download>RESNET34 with a plateau based LR scheduler, smaller batch</a>
